@@ -1,10 +1,10 @@
 package com.example.mainsite.site24;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Date;
 
 // SQL statement for creating table
 //CREATE TABLE cargo (
@@ -18,19 +18,34 @@ import jakarta.persistence.Id;
 //        PRIMARY KEY (ID)
 //        ) ENGINE=InnODB DEFAULT CHARSET=UTF8
 @Entity
+@Table(name="cargo", schema="WAREHOUSE")
 public class Cargo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     private Long ID;
-    private String name_load;
+    @NotNull
+    @Column(name = "name_load")
+    private String nameLoad;
+    @NotNull
+    @Column(name = "content")
     private String content;
-    private String city_from;
-    private String city_to;
-    private String data_input;
-    private String data_output;
+    @Column(name = "city_from")
+    private String cityFrom;
+    @NotNull
+    @Column(name = "city_to")
+    private String cityTo;
+    @NotNull
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "data_input")
+    private Date dataInput;
+    @NotNull
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "data_output")
+    private Date dataOutput;
     protected Cargo() {
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getID() {
         return ID;
     }
@@ -39,12 +54,12 @@ public class Cargo {
         this.ID = ID;
     }
 
-    public String getName_load() {
-        return name_load;
+    public String getNameLoad() {
+        return nameLoad;
     }
 
-    public void setName_load(String name_load) {
-        this.name_load = name_load;
+    public void setNameLoad(String nameLoad) {
+        this.nameLoad = nameLoad;
     }
 
     public String getContent() {
@@ -55,35 +70,35 @@ public class Cargo {
         this.content = content;
     }
 
-    public String getCity_from() {
-        return city_from;
+    public String getCityFrom() {
+        return cityFrom;
     }
 
-    public void setCity_from(String city_from) {
-        this.city_from = city_from;
+    public void setCityFrom(String cityFrom) {
+        this.cityFrom = cityFrom;
     }
 
-    public String getCity_to() {
-        return city_to;
+    public String getCityTo() {
+        return cityTo;
     }
 
-    public void setCity_to(String city_to) {
-        this.city_to = city_to;
+    public void setCityTo(String cityTo) {
+        this.cityTo = cityTo;
     }
 
-    public String getData_input() {
-        return data_input;
+    public Date getDataInput() {
+        return dataInput;
     }
 
-    public void setData_input(String data_input) {
-        this.data_input = data_input;
+    public void setDataInput(Date dataInput) {
+        this.dataInput = dataInput;
     }
 
-    public String getData_output() {
-        return data_output;
+    public Date getDataOutput() {
+        return dataOutput;
     }
 
-    public void setData_output(String data_output) {
-        this.data_output = data_output;
+    public void setDataOutput(Date dataOutput) {
+        this.dataOutput = dataOutput;
     }
 }
