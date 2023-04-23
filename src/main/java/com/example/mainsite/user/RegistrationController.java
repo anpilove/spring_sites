@@ -1,4 +1,4 @@
-package com.example.mainsite.authorization;
+package com.example.mainsite.user;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,4 +1,4 @@
-package com.example.mainsite.authorization;
+package com.example.mainsite.user;
 
 public enum AppUserRole {
     USER,

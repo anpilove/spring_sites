@@ -1,4 +1,4 @@
-package com.example.mainsite.authorization;
+package com.example.mainsite.user;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
